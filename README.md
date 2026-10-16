@@ -1,5 +1,7 @@
-# Python AI Portfolio
+# Shayan Ahmad Tabani - Python Basics for GenAI and Agentic AI
 
-**Name:** Shayan Ahmad Tabani
-**Course Name:** Python for AI
-**My AI Goal:** I am training to become a professional AI Agent Developer, focusing on building practical, intelligent, and agentic AI solutions.
+**My AI Goal:** I want to build intelligent agents to automate slow business processes.
+
+## How to Run
+```bash
+uv run main.py
