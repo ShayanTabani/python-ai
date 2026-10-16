@@ -1,7 +1,9 @@
-# Shayan Ahmad Tabani - Python Basics for GenAI and Agentic AI
+## Module 1 Project: AI Prompt Kit
 
-**My AI Goal:** I want to build intelligent agents to automate slow business processes.
+A Python tool that turns a local business's details into ready-to-use AI prompts.
 
-## How to Run
-```bash
-uv run main.py
+**Run:** `uv run code/project_m1_prompt_kit.py`
+
+![Prompt Kit running](docs/project-m1-run.png)
+
+**Who would pay for this:** Cafe and small shop owners who want AI help but don't know what to type.
