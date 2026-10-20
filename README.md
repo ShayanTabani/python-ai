@@ -15,3 +15,13 @@ A Python tool that turns a local business's details into ready-to-use AI prompts
 | 3. Location | location, address, where | We are located at Main Boulevard, Lahore. |
 | 4. Complaint (Handover) | complaint, late, agent, human | Sorry about that. Connecting you to a human... |
 | 5. Exit | bye, exit | Take care! |
+
+## Module 1 Final Project: AI Front Desk
+
+A smart front desk assistant for City Care Clinic that handles FAQs, provides instant price quotes with discounts, and routes complex questions to AI safely.
+
+**Run:** `uv run code/project_m1_front_desk.py`
+
+![Front Desk running](docs/project-m1-part2-run.png)
+
+**Value to owner:** Saves staff time by answering common questions instantly, eliminates human errors in pricing, and cuts AI costs by handling 80% of queries for free via rules.
