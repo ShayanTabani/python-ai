@@ -3,24 +3,30 @@
 raw_name = input("Enter your name: ")
 raw_question = input("Enter your messy question (include 'stupid' to see it censored): ")
 
-# Clean the text: remove extra spaces, fix capitalization, and replace bad words
+# Clean the text: fix capitalization, and replace bad words (Stretch Goal part 1)
 clean_name = raw_name.strip().title()
 clean_question = raw_question.strip().capitalize().replace("stupid", "*****")
 
-# Calculate tokens (rule of thumb: 1 token = ~4 characters)
+# Calculate tokens
 char_count = len(clean_question)
 estimated_tokens = round(char_count / 4)
 
+# Calculate estimated cost (Stretch Goal part 2)
+estimated_cost = estimated_tokens * 0.05
+
 print(f"Characters: {char_count}, Estimated tokens: {estimated_tokens}")
 
-# Check if python is mentioned (using lower() to catch any capitalization)
+# Print the cost with exactly 2 decimal places using :.2f
+print(f"Estimated Cost: {estimated_cost:.2f} PKR")
+
+# Check if python is mentioned
 mentions_python = "python" in clean_question.lower()
 print(f"Mentions 'python': {mentions_python}")
 
-# Limit question to 150 chars to save tokens
+# Limit question to 150 chars
 short_question = clean_question[:150]
 
-# Build final multi-line prompt using f-strings
+# Build final multi-line prompt
 prompt = f"""Hello {clean_name},
 You asked: {short_question}
 Let me help you with that!"""
