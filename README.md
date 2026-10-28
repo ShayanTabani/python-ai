@@ -1,3 +1,16 @@
+# Shayan Tabani
+**Course:** Python for AI
+**My AI Goal:** To build intelligent AI tools and assistants that solve real-world problems for local businesses.
+
+**Main Run Command:** `uv run main.py`
+
+## Lessons Done
+- Module 1: Lessons 1.1 to 1.8 (Completed)
+- Module 1: Final Project (Completed)
+- Module 2: Lessons 2.1 to 2.4 (Completed)
+- Module 2: Checkpoint 1 (Completed)
+
+---
 ## Module 1 Project: AI Prompt Kit
 
 A Python tool that turns a local business's details into ready-to-use AI prompts.
