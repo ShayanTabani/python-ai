@@ -4,14 +4,15 @@ A clinic assistant that handles FAQs, calculates service quotes,
 and safely routes complex questions to AI models.
 """
 
+# Why 1: Constants are UPPER_CASE at the top so they are easy to find and configure.
 BOT_NAME = "City Care Bot"
 HOME_VISIT_FEE = 500
 FREE_VISIT_LIMIT = 5000
 CLOUD_PRICE_PER_1K = 0.50
 
-print("==================================================")
-print(f"   {BOT_NAME}: rules, quotes and AI-ready prompts")
-print("==================================================")
+print("--------------------------------------------------")
+print(f"{BOT_NAME}: rules, quotas and AI-ready prompts")
+print("--------------------------------------------------")
 print("Ask anything, type /quote for a price, or bye to exit.")
 
 user_name = input(f"{BOT_NAME}: What is your name? ").strip().title()
@@ -24,8 +25,10 @@ total_quoted_value = 0.0
 total_ai_cost = 0.0
 complaints = 0
 
+# Why 2: A while True loop keeps the chatbot running continuously until the user says bye.
 while True:
     raw_msg = input(f"{user_name}: ")
+    # Why 3: We use .lower() on the input so our intent matching works no matter the capitalization.
     msg = raw_msg.strip().lower()
     
     if not msg:
@@ -77,9 +80,9 @@ while True:
         quotes_count += 1
         total_quoted_value += total
         
-        print(f"{BOT_NAME}: {qty} x {item} = {subtotal:,.0f} PKR")
-        print(f"     Discount: -{discount:,.0f} PKR | Delivery: {delivery:,.0f} PKR")
-        print(f"     Total: {total:,.0f} PKR")
+        print(f"{BOT_NAME}: {qty} x {item} = (Subtotal: {subtotal:,.0f} PKR)")
+        print(f"        Discount: -{discount:,.0f} PKR | Delivery: {delivery:,.0f} PKR")
+        print(f"        Total: {total:,.0f} PKR")
         
     elif msg == "hi" or msg.startswith("hello"):
         rules_answered += 1
@@ -99,6 +102,7 @@ while True:
         
     else:
         unanswered += 1
+        # Why 4: We slice the string with [:150] to limit context size and save AI token costs.
         clean_question = raw_msg.strip().capitalize()[:150]
         estimated_tokens = round(len(clean_question) / 4)
         
@@ -118,7 +122,7 @@ Answer {user_name} in 2 short lines.
 Question: {clean_question}"""
         print(ai_prompt)
 
-print("==================================================")
+print("--------------------------------------------------")
 print("Session report")
 print(f"Messages: {total_msgs} | Answered by rules: {rules_answered} | Unanswered: {unanswered}")
 print(f"Quotes: {quotes_count} | Quoted value: {total_quoted_value:,.0f} PKR")
